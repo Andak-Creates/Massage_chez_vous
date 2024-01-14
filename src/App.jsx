@@ -5,7 +5,9 @@ import Home from "./Pages/Home";
 import ServiceAndPricing from "./Pages/ServiceAndPricing";
 import { About } from "./Pages/About";
 import BookNow from "./Pages/BookNow";
-
+import Banner from "./Components/Banner";
+import Aside from "./Components/Aside";
+import { useMyContext } from "./Components/Context";
 const App = () => {
   return (
     <Router>
@@ -17,6 +19,10 @@ const App = () => {
           <Route path="About us" element={<About />} />
           <Route path="Book Now" element={<BookNow />} />
         </Routes>
+
+        {/* <Aside /> */}
+
+        <Banner />
       </div>
     </Router>
   );

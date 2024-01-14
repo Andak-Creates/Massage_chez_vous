@@ -2,10 +2,290 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transition: all 300ms ease;
+}
+
+/* Color variables */
+:root {
+  /* Text colors */
+  --WMU_RED: red;
+  --burlyWood: rgba(228, 200, 163, 0.342);
+
+  /* common margin spacing */
+  --myMargin: 30px;
+}
+
+body {
+  background-color: whitesmoke;
 }
 
 /* styling navigation bar */
 .navigator {
-  height: 100px;
-  border: 1px solid black;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: -5px -5px 8px black;
+  background-color: white;
+}
+
+.NavLinks {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NavLinks a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.banner {
+  display: none;
+}
+
+.burger {
+  display: none;
+}
+
+/* home section */
+.innerHome {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerHome img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  filter: blur(1px);
+  z-index: -2;
+}
+
+.innerHomeContent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.innerHomeContent h2 {
+  font-size: 40px;
+}
+
+.innerHomeContent p {
+  word-spacing: 4px;
+}
+
+/* Below content */
+.contentBelow {
+  margin-top: var(--myMargin);
+  padding: 0px 70px;
+}
+
+.contentBelow p {
+  font-size: 25px;
+  word-spacing: 3px;
+  text-align: justify;
+}
+
+.lightBlueText {
+  color: rgb(251, 181, 89);
+}
+
+/* WHAT MAKES US STYLES */
+.whatMakesUs {
+  text-align: center;
+  margin-top: var(--myMargin);
+  padding: 0px 70px;
+}
+
+.wmu_header {
+  color: var(--WMU_RED);
+  text-align: center;
+}
+
+.wmuContent {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: var(--myMargin);
+}
+
+.wmuDetails {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* services  */
+.ourServices {
+  height: auto;
+  max-width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: var(--myMargin);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.642);
+  padding: 10px;
+}
+
+.innerService {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+.service {
+  width: 370px;
+  padding: 10px 25px;
+  border-radius: 18px;
+  background-color: var(--burlyWood);
+  gap: 10px;
+}
+
+/* mini About us */
+.homeAbout {
+  text-align: center;
+  margin-top: var(--myMargin);
+  max-width: 90%;
+  margin: var(--myMargin) auto;
+}
+
+.miniAbout {
+  margin-top: 10px;
+  height: 210px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.miniAbout img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.miniAbout p {
+  width: 60%;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.viewMoreBtn {
+  padding: 5px 10px 10px;
+  color: black;
+  text-decoration: none;
+  background-color: var(--burlyWood);
+  border-radius: 10px;
+  display: flex;
+  outline: none;
+  border: none;
+}
+
+/* Media Query */
+@media (max-width: 835px) {
+  .NavLinks {
+    width: 45%;
+  }
+}
+
+/*  */
+@media (max-width: 615px) {
+  .NavLinks {
+    display: none;
+  }
+  .navigator a {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+
+  .banner {
+    position: fixed;
+    top: 80%;
+    right: 10%;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: 11px 11px 28px #666666, -11px -11px 28px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+
+  .innerHome {
+    height: 370px;
+  }
+
+  .innerHomeContent h2 {
+    font-size: 35px;
+  }
+
+  .innerHomeContent {
+    width: 90%;
+  }
+
+  .contentBelow {
+    padding: 0px 45px;
+  }
+
+  .contentBelow p {
+    font-size: 25px;
+    word-spacing: 1px;
+    text-align: justify;
+  }
+
+  .homeAbout {
+    height: auto;
+    padding: 10px 25px 10px;
+  }
+  .miniAbout {
+    height: auto;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .miniAbout img {
+    width: 80%;
+    height: 85%;
+  }
+
+  .miniAbout p {
+    width: 100%;
+    font-size: 25px;
+  }
 }
