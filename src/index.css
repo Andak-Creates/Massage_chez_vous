@@ -6,7 +6,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  transition: all 300ms ease;
+  transition: all 300ms ease !important;
 }
 
 /* Color variables */
@@ -152,6 +152,10 @@ body {
   padding: 10px;
 }
 
+.ourServices h2 {
+  margin-top: var(--myMargin);
+}
+
 .innerService {
   display: flex;
   align-self: center;
@@ -212,6 +216,55 @@ body {
   border: none;
 }
 
+/* Footer section */
+.footer {
+  background-color: var(--burlyWood); /*just for now, remember to change*/
+  margin-top: var(--myMargin);
+}
+
+.footer small {
+  color: var(--WMU_RED);
+}
+
+.logo {
+  text-align: left;
+  color: var(--WMU_RED);
+  padding: 20px 75px;
+}
+
+.footDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 75px;
+  gap: 30px;
+}
+
+.footService,
+.footContact,
+.footAbout {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rights {
+  padding: 10px;
+  border-top: 1px solid black;
+  max-width: 90%;
+  margin: var(--myMargin) auto;
+  text-align: center;
+}
+
+.FS {
+  width: 100%;
+  padding: 10px 25px;
+  border-radius: 18px;
+  background-color: var(--burlyWood);
+  gap: 10px;
+}
+
 /* Media Query */
 @media (max-width: 835px) {
   .NavLinks {
@@ -245,6 +298,7 @@ body {
     justify-content: center;
     align-items: center;
     color: black;
+    z-index: 50;
   }
 
   .innerHome {

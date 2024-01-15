@@ -8,6 +8,9 @@ import BookNow from "./Pages/BookNow";
 import Banner from "./Components/Banner";
 import Aside from "./Components/Aside";
 import { useMyContext } from "./Components/Context";
+import Footer from "./Components/Footer";
+import "./Css/bookform.css";
+
 const App = () => {
   return (
     <Router>
@@ -23,6 +26,8 @@ const App = () => {
         {/* <Aside /> */}
 
         <Banner />
+
+        <Footer />
       </div>
     </Router>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import { ourServices } from "../Components/Tools";
+import BookNowForm from "../Components/BookNowForm";
 
 const Home = () => {
   return (
@@ -68,6 +69,9 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      {/* Book Now Section */}
+      <BookNowForm />
     </div>
   );
 };
