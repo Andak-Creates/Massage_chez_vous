@@ -6,7 +6,7 @@
 
 .backgroundHolder {
   display: flex;
-  height: 350px;
+  height: 370px;
   max-width: 90%;
   margin: auto;
   padding: 5px;
@@ -28,8 +28,10 @@
   height: 75%;
   width: 45%;
   z-index: 20;
-  top: 20%;
+  top: 45%;
+  transform: translateY(-45%);
   left: 40%;
+  margin-top: var(--myMargin);
 }
 
 .innerForm {
@@ -61,29 +63,24 @@ label {
   height: 50px;
   display: flex;
   width: 48%;
-  align-items: center;
-  padding: 10px;
-  overflow: hidden;
-  z-index: 30;
+  padding: 5px;
+  margin-top: 19.5px;
+  cursor: pointer;
 }
 
-.holder {
-  /* display: none; */
-  position: absolute;
-  left: 80%;
-  top: 90%;
-  z-index: 40;
-}
-
-.holder ul {
-  text-align: left;
-  border: 1px solid;
-  padding: 10px;
-  height: 100%;
+.bookSesh {
+  width: 50%;
+  margin: auto;
+  height: 40px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
 /* media Quary */
-@media (max-width: 615px) {
+@media (max-width: 665px) {
   .backgroundHolder .plainBack {
     display: none;
   }
@@ -95,12 +92,14 @@ label {
 
   .backgroundHolder {
     position: relative;
+    height: 500px;
   }
 
   .form {
+    position: absolute;
     width: 90%;
-    height: 90%;
-    /* margin: 10px auto; */
+    height: 80%;
+    margin: 0 auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -115,5 +114,9 @@ label {
   .input,
   .pickService {
     background-color: white;
+  }
+
+  .bookSesh {
+    margin: 0 auto;
   }
 }

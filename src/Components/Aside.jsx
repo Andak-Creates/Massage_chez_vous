@@ -4,56 +4,57 @@ import { useMyContext } from "./Context";
 import "../Css/aside.css";
 const Aside = () => {
   const { isAsideOpen, setAside } = useMyContext();
-  const closeAside = () => {
+  const closeAsideBody = () => {
     setAside(false);
   };
   return (
     <>
-      {window.innerWidth < 615 ? (
+      {isAsideOpen ? (
         <div
           className="aside"
-          onClick={closeAside}
-          style={
-            isAsideOpen
-              ? {
-                  height: "100%",
-                  width: "100%",
-                  position: "fixed",
-                  top: "0",
-                  left: "0",
-                  zIndex: "12",
-                  overflow: "hidden",
-                  display: "flex",
-                  transition: "all 300ms ease 300ms",
-                }
-              : {
-                  height: "100%",
-                  width: "100%",
-                  position: "fixed",
-                  top: "0",
-                  right: "0",
-                  zIndex: "12",
-                  overflow: "hidden",
-                  display: "flex",
-                }
-          }
+          onClick={closeAsideBody}
+          style={{
+            width: "100%",
+            transition: "all 300ms ease",
+
+            height: "100%",
+            position: "fixed",
+            top: "0",
+            right: 0,
+
+            backdropFilter: "blur(3px)",
+            zIndex: "60",
+          }}
         >
-          <div className="cancelBtn" onClick={closeAside}>
-            <h1 style={{ color: "white" }}>X</h1>
-          </div>
-          <div className="asideContent">
-            <div className="asideLink">
-              <Link to="/">Home</Link>
-              <Link to="Service & Pricing">Service & Pricing</Link>
-              <Link to="About Us">About us</Link>
-              <Link to="Book Now">Book Now</Link>
+          <div className="innerAside">
+            <div className="cancelBtn" onClick={closeAsideBody}>
+              <h1 style={{ color: "white" }}>X</h1>
+            </div>
+
+            <div className="asideContent">
+              <div className="asideLink">
+                <Link to="/">Home</Link>
+                <Link to="Service & Pricing">Service & Pricing</Link>
+                <Link to="About Us">About us</Link>
+                <Link to="Book Now">Book Now</Link>
+              </div>
             </div>
           </div>
         </div>
       ) : (
-        <div className="aside" style={{ display: "none" }}>
-          too big
-        </div>
+        <div
+          className="aside"
+          style={{
+            transition: "all 300ms ease",
+            width: "0%",
+            height: "100%",
+            position: "fixed",
+            top: "0",
+            right: 0,
+            backdropFilter: "blur(3px)",
+            zIndex: "60",
+          }}
+        ></div>
       )}
     </>
   );

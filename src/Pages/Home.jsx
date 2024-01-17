@@ -2,7 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import { ourServices } from "../Components/Tools";
 import BookNowForm from "../Components/BookNowForm";
-
+import Wmu from "../Components/Wmu";
 const Home = () => {
   return (
     <div className="home">
@@ -35,7 +35,7 @@ const Home = () => {
       </div>
 
       {/* About Us */}
-      <div className="homeAbout">
+      {/* <div className="homeAbout">
         <h2>About Us</h2>
         <div className="miniAbout">
           <img src="chezVous.jpg" alt="unavailable" />
@@ -48,7 +48,7 @@ const Home = () => {
             <button className="viewMoreBtn">View More</button>
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Our services */}
       <div className="ourServices">
@@ -69,6 +69,9 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      {/* What makes us a customer favorite section */}
+      <Wmu />
 
       {/* Book Now Section */}
       <BookNowForm />

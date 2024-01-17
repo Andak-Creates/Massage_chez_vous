@@ -23,7 +23,7 @@ const App = () => {
           <Route path="Book Now" element={<BookNow />} />
         </Routes>
 
-        {/* <Aside /> */}
+        <Aside />
 
         <Banner />
 

@@ -6,6 +6,7 @@ const NavigationBar = () => {
   const { isAsideOpen, setAside } = useMyContext();
   const openAside = () => {
     isAsideOpen ? setAside(false) : setAside(true);
+    console.log(isAsideOpen);
   };
   return (
     <>
