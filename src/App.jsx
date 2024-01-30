@@ -10,25 +10,29 @@ import Aside from "./Components/Aside";
 import { useMyContext } from "./Components/Context";
 import Footer from "./Components/Footer";
 import "./Css/bookform.css";
+import "./Css/about.css";
+import "./Css/booknow.css";
 
 const App = () => {
   return (
     <Router>
-      <div>
+      <>
         <NavigationBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="Service & Pricing" element={<ServiceAndPricing />} />
-          <Route path="About us" element={<About />} />
-          <Route path="Book Now" element={<BookNow />} />
-        </Routes>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Service-&-Pricing" element={<ServiceAndPricing />} />
+            <Route path="/About-Us" element={<About />} />
+            <Route path="/Book-Now" element={<BookNow />} />
+          </Routes>
 
-        <Aside />
+          <Aside />
 
-        <Banner />
+          <Banner />
 
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </>
     </Router>
   );
 };

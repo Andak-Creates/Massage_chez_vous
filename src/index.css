@@ -31,6 +31,10 @@ body {
   justify-content: space-between;
   box-shadow: -5px -5px 8px black;
   background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 59;
 }
 
 .NavLinks {
@@ -58,13 +62,14 @@ body {
 .innerHome {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 600px;
   overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: var(--myMargin);
 }
 
 .innerHome img {
@@ -88,6 +93,7 @@ body {
 
 .innerHomeContent h2 {
   font-size: 40px;
+  color: whitesmoke;
 }
 
 .innerHomeContent p {
@@ -160,19 +166,30 @@ body {
   display: flex;
   align-self: center;
   justify-self: center;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
   padding: 20px;
 }
 
 .service {
-  width: 370px;
-  padding: 10px 25px;
+  height: auto;
+  width: 360px;
+  padding: 20px 25px;
   border-radius: 18px;
   background-color: var(--burlyWood);
   gap: 10px;
+  position: relative;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.service img {
+  width: 100%;
+  height: 210px;
+  border-radius: 10px;
 }
 
 /* mini About us */
@@ -216,6 +233,15 @@ body {
   border: none;
 }
 
+.book_sessionBtn {
+  text-decoration: none;
+  color: black;
+}
+
+/* .viewMoreBtn:hover{
+  background-color: gradiant();
+} */
+
 /* Footer section */
 .footer {
   background-color: var(--burlyWood); /*just for now, remember to change*/
@@ -242,7 +268,8 @@ body {
 
 .footService,
 .footContact,
-.footAbout {
+.footAbout,
+.footForm {
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -263,6 +290,29 @@ body {
   border-radius: 18px;
   background-color: var(--burlyWood);
   gap: 10px;
+}
+
+.footForm {
+  padding: 5px;
+  background-color: var(--burlyWood);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.footForm label {
+  width: 100%;
+}
+
+.footForm input {
+  height: 35px;
+  padding: 5px;
+}
+
+.footForm button {
+  height: 30px;
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
 }
 
 /* Media Query */
@@ -288,10 +338,9 @@ body {
     position: fixed;
     top: 80%;
     right: 10%;
-    height: 100px;
-    width: 100px;
-    padding: 10px;
-    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
     background: #ffffff;
     box-shadow: 11px 11px 28px #666666, -11px -11px 28px #ffffff;
     display: flex;
@@ -299,6 +348,12 @@ body {
     align-items: center;
     color: black;
     z-index: 50;
+  }
+
+  .banner p {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
   }
 
   .innerHome {
@@ -341,5 +396,37 @@ body {
   .miniAbout p {
     width: 100%;
     font-size: 25px;
+  }
+
+  .ourServices {
+    position: relative;
+    width: 100%;
+  }
+
+  .ourServices h2 {
+    margin: 10px;
+  }
+
+  .innerService {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    align-items: normal;
+  }
+
+  .service {
+    width: 100%;
+    margin: 10px 5px;
+  }
+
+  .footService,
+  .footContact,
+  .footAbout,
+  .footForm {
+    width: 100%;
+  }
+
+  .footDetails {
+    padding: 20px 40px;
   }
 }

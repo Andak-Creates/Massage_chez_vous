@@ -1,7 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ourServices } from "./Tools";
+import { useMyContext } from "./Context";
 
 const Footer = () => {
+  const {
+    myThoughts,
+    setThoughts,
+    testimonial,
+    setTestimonial,
+    myName,
+    setMyName,
+  } = useMyContext();
+
+  useEffect(() => {
+    //retrieve testimonial from local storage
+    const storedTestimonial =
+      JSON.parse(localStorage.getItem("testimonials")) || [];
+    setTestimonial(storedTestimonial);
+  }, []);
+
+  const handleThoughts = (event) => {
+    setThoughts(event.target.value);
+  };
+
+  const HandleName = (event) => {
+    setMyName(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    //creating new testimonials
+    const newTestimonial = {
+      id: Date.now(), //Adds unique ID
+      name: myName,
+      thoughts: myThoughts,
+    };
+
+    //updates testimonial state
+    setTestimonial([...testimonial, newTestimonial]);
+
+    // Storing testimonial data in local storage
+    localStorage.setItem(
+      "testimonials",
+      JSON.stringify([...testimonial, newTestimonial])
+    );
+
+    // Reset form
+    setMyName("");
+    setThoughts("");
+  };
+
   return (
     <div className="footer">
       <h2 className="logo">Massage Chez Vous</h2>
@@ -24,7 +73,9 @@ const Footer = () => {
 
         <div className="footContact">
           <small>CONTACT</small>
-          <a href="tel:08119540296">tel: 08119540296</a>
+          <p>
+            Tel: <a href="tel:08119540296">08119540296</a>
+          </p>
           <p>
             Location: <a href="">Lagos, Lekki Sangotendo</a>
           </p>
@@ -32,6 +83,20 @@ const Footer = () => {
             IG: <a href="">Massage Chez Vous</a>
           </p>
         </div>
+
+        <form className="footForm" onSubmit={handleSubmit}>
+          <small className="wmuHeader">POST A FEEDBACK</small>
+          <label>
+            name:
+            <input type="text" value={myName} onChange={HandleName} />
+          </label>
+          <label>
+            Comment:
+            <input type="text" value={myThoughts} onChange={handleThoughts} />
+          </label>
+
+          <button type="submit">Submit</button>
+        </form>
       </div>
       <div className="rights">All Rights Reserved. Designed By Vindi Tech</div>
     </div>

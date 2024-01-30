@@ -1,0 +1,46 @@
+.bookNow {
+  margin: 100px auto;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+form button {
+  width: 30%;
+  height: 35px;
+  border-radius: 10px;
+}
+
+select,
+input {
+  height: 35px;
+}
+
+.contactInfo {
+  margin-top: var(--myMargin);
+}
+
+@media (max-width: 615px) {
+  form {
+    width: 100%;
+    padding: 20px;
+  }
+  select,
+  input {
+    height: 50px;
+    padding: 10px;
+  }
+}

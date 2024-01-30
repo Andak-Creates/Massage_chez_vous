@@ -7,6 +7,14 @@ const Aside = () => {
   const closeAsideBody = () => {
     setAside(false);
   };
+
+  const handleClick = () => {
+    // Scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       {isAsideOpen ? (
@@ -32,11 +40,11 @@ const Aside = () => {
             </div>
 
             <div className="asideContent">
-              <div className="asideLink">
+              <div className="asideLink" onClick={handleClick}>
                 <Link to="/">Home</Link>
-                <Link to="Service & Pricing">Service & Pricing</Link>
-                <Link to="About Us">About us</Link>
-                <Link to="Book Now">Book Now</Link>
+                <Link to="/Service-&-Pricing">Service & Pricing</Link>
+                <Link to="/About-Us">About us</Link>
+                <Link to="/Book-Now">Book Now</Link>
               </div>
             </div>
           </div>

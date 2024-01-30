@@ -23,23 +23,63 @@ export const whatMakesUs = [
 
 export const ourServices = [
   {
-    img: "unavailable",
+    img: "photo-167.webp",
     service: "Swedish Massage",
     details: "Currently unavailable",
   },
   {
-    img: "unavailable",
+    img: "deep1.webp",
     service: "Deep Tissue Massage",
-    details: "Currently unavailable",
+    details:
+      "A strong massage to ease tension like lower back and shoulder pain ",
   },
   {
-    img: "unavailable",
+    img: "photo-1444312645910-ffa973656eba.webp",
     service: "Hot Stone Massage",
     details: "Currently unavailable",
   },
   {
-    img: "unavailable",
+    img: "istockphoto-16.jpg",
     service: "Sport Stretch",
     details: "Currently unavailable",
+  },
+];
+
+export const serviceAndPricingDetails = [
+  {
+    service: "Swedish Massage",
+    img: "photo-15.webp",
+    details:
+      "One of the most common types of massage therapy used to relax and relieve pain...",
+    smallTime: 25,
+    mediumTime: 45,
+    largestTime: 60,
+  },
+  {
+    service: "Deep Tissue Massage",
+    img: "deep1.webp",
+    details:
+      "Deep tissue massage offers both physical and psychological benefits. it can relieve muscle pain and stiffness and provide stress-relieving relaxaxtion for the body and mind... ",
+    smallTime: 25,
+    mediumTime: 45,
+    largestTime: 60,
+  },
+  {
+    service: "Hot Stone Massage",
+    img: "stoneMassage.webp",
+    details:
+      "A hot stone massage is a type of massage in which the masseuse places smooth, hot stones on your back. these stones provide heat therapy to muscles, which can help reduce tension and pain.",
+    smallTime: 25,
+    mediumTime: 45,
+    largestTime: 60,
+  },
+  {
+    service: "Sport Stretch",
+    img: "istockphoto-16.jpg",
+    details:
+      "Sport stretch increases your range of motion and flexibility by making your soft tissues, such as muscles and ligaments, longer by decreasing stiffness.",
+    smallTime: 25,
+    mediumTime: 45,
+    largestTime: 60,
   },
 ];

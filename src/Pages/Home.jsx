@@ -3,19 +3,20 @@ import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import { ourServices } from "../Components/Tools";
 import BookNowForm from "../Components/BookNowForm";
 import Wmu from "../Components/Wmu";
+import CustomLink from "../Components/CustomLink";
 const Home = () => {
   return (
     <div className="home">
       <div className="innerHome">
-        <img src="CoolImage.jpg" alt="" />
+        <img src="stoneMassage.webp" alt="" />
 
         <div className="innerHomeContent">
           <h2>The Best Massage Service At Your Doorstep.</h2>
           <p>TAX AND TIPS INCLUDED</p>
           <div className="findOutMore">
-            <Link to="About us" className="viewMoreBtn">
-              Find Out More
-            </Link>
+            <CustomLink to="/About-Us" className="viewMoreBtn">
+              View More
+            </CustomLink>
           </div>
         </div>
       </div>
@@ -57,14 +58,13 @@ const Home = () => {
         <div className="innerService">
           {ourServices.map((service, idx) => (
             <div className="service" key={idx}>
-              <img src="" alt={service.img} />
+              <img src={service.img} alt="" />
               <p>{service.service}</p>
               <small> {service.details} </small>
               <br></br>
-              <Link to="About us" className="viewMoreBtn">
-                {" "}
-                <small>see more -></small>{" "}
-              </Link>
+              <CustomLink to="/Service-&-Pricing" className="viewMoreBtn">
+                See More
+              </CustomLink>
             </div>
           ))}
         </div>

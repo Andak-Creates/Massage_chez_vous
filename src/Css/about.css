@@ -1,0 +1,146 @@
+.about {
+  margin: 100px auto 0px;
+  width: 95%;
+  /* border: 1px solid black; */
+}
+
+.about h2 {
+  text-align: center;
+}
+
+.top {
+  font-size: 18px;
+  margin: 20px;
+}
+
+/* How it works */
+.howItWorks {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.howItWorks h1 {
+  margin-bottom: 20px;
+  font-size: 55px;
+  font-weight: 200;
+}
+
+.innerWork {
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid; */
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+}
+
+.innerWork .work {
+  width: 250px;
+}
+
+.work h1 {
+  font-size: 50px;
+  font-weight: 100;
+}
+
+.work small {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.work p {
+  font-size: 18px;
+}
+
+.bookASession {
+  margin-top: var(--myMargin);
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+.overTheYears {
+  margin-top: var(--myMargin);
+}
+
+.overTheYears img {
+  width: 380px;
+  float: left;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.overTheYears p {
+  margin: 30px 20px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.endNote {
+  font-size: 18px;
+  text-align: justify;
+  margin: 20px;
+}
+
+.available {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimony {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimony img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.testimony p {
+  width: 200px;
+}
+
+/* Media Query secton */
+@media (max-width: 900px) {
+  .overTheYears p {
+    margin: 5px 5px 0;
+  }
+}
+
+@media (max-width: 750px) {
+  .overTheYears {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+  }
+  .overTheYears img {
+    float: none;
+    width: 100%;
+    margin: 0;
+    height: 50%;
+  }
+
+  .overTheYears p {
+    margin: 20px 0 0;
+  }
+}

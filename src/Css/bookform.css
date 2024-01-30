@@ -1,15 +1,23 @@
 .bookingForm {
-  margin-top: var(--myMargin);
+  margin-top: 40px;
   text-align: center;
   position: relative;
+  /* background-color: white; */
+  margin-bottom: var(--myMargin);
+  padding: var(--myMargin) 0;
+}
+
+.bookingForm h2 {
+  margin-top: -30px;
 }
 
 .backgroundHolder {
   display: flex;
-  height: 370px;
+  height: 390px;
   max-width: 90%;
-  margin: auto;
+  margin: 30px auto;
   padding: 5px;
+  position: relative;
 }
 
 .backgroundHolder .imageBack {
@@ -25,12 +33,12 @@
 .form {
   background-color: white;
   position: absolute;
-  height: 75%;
-  width: 45%;
+  height: 80%;
+  width: 50%;
   z-index: 20;
-  top: 45%;
-  transform: translateY(-45%);
-  left: 40%;
+  top: 25%;
+  transform: translateY(-25%);
+  left: 37%;
   margin-top: var(--myMargin);
 }
 
@@ -68,8 +76,17 @@ label {
   cursor: pointer;
 }
 
-.bookSesh {
+.theFormLink {
+  margin: auto;
+  position: relative;
+  padding: 10px;
   width: 50%;
+  z-index: 4;
+}
+
+.bookSesh {
+  width: 100%;
+  height: 100%;
   margin: auto;
   height: 40px;
   padding: 10px 15px;
@@ -77,6 +94,7 @@ label {
   border: none;
   cursor: pointer;
   margin-top: 15px;
+  z-index: 1;
 }
 
 /* media Quary */
@@ -104,6 +122,7 @@ label {
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.692);
+    border-radius: 10px;
   }
 
   label,

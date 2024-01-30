@@ -1,0 +1,99 @@
+.serviceAndPricing {
+  margin: 110px auto;
+  width: 95%;
+}
+
+.serviceAndPricing h2 {
+  text-align: center;
+}
+
+.serviceContent {
+  margin: 20px;
+}
+
+.serviceTitle {
+  text-align: center;
+}
+
+.innerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.innerContent img {
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.prices {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.price {
+  position: relative;
+  width: auto;
+}
+
+.image,
+.desc {
+  width: 40%;
+}
+
+.innerContent small {
+  display: none;
+}
+
+@media (max-width: 835px) {
+  .serviceAndPricing {
+    margin: 90px auto;
+    width: 100%;
+  }
+
+  .serviceTitle {
+    text-align: left;
+  }
+
+  .innerContent {
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 0;
+    position: relative;
+  }
+
+  .innerContent small {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+  }
+
+  .innerContent .prices {
+    width: 50%;
+  }
+
+  .price h5 {
+    font-size: 8px;
+  }
+
+  .price p {
+    font-size: 13px;
+  }
+
+  .innerContent img {
+    width: 48%;
+  }
+
+  .desc {
+    display: none;
+  }
+}
