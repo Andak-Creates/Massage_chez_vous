@@ -22,7 +22,7 @@ const Home = () => {
       </div>
 
       {/* Content below InnerHome */}
-      <div className="contentBelow">
+      <div className="contentBelow" data-aos="zoom-in" data-aos-duration="1000">
         <p>
           Want a break from the daily grind? Massage Chez Vous's{" "}
           <span className="lightBlueText">
@@ -52,12 +52,17 @@ const Home = () => {
       </div> */}
 
       {/* Our services */}
-      <div className="ourServices">
+      <div className="ourServices" data-aos="zoom-in" data-aos-duration="1000">
         <h2>Our services</h2>
 
         <div className="innerService">
           {ourServices.map((service, idx) => (
-            <div className="service" key={idx}>
+            <div
+              className="service"
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              key={idx}
+            >
               <img src={service.img} alt="" />
               <p>{service.service}</p>
               <small> {service.details} </small>

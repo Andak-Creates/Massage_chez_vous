@@ -10,8 +10,10 @@ export const About = () => {
   return (
     <>
       <div className="about">
-        <h2>Health is Happiness</h2>
-        <p className="top">
+        <h2 data-aos="fade-up" data-aos-duration="1000">
+          Health is Happiness
+        </h2>
+        <p data-aos="fade-up" data-aos-duration="1000" className="top">
           At Massage Chez Vous, we have a passion for health and wellness. It is
           our goal to see people improve their day to day wellbeing by helping
           them reduce or resolve their pain. it is defficult to truly enjoy life
@@ -22,10 +24,10 @@ export const About = () => {
           trained therapist can ba a powerful remedy
         </p>
         {/* How it works section */}
-        <div className="howItWorks">
+        <div className="howItWorks" data-aos="fade-up" data-aos-duration="1000">
           <h1>How it works</h1>
           <div className="innerWork">
-            <div className="work">
+            <div className="work" data-aos="fade-up" data-aos-duration="1500">
               <h1 className="step">01.</h1>
               <small>Choose your treatment</small>
               <p>
@@ -33,7 +35,7 @@ export const About = () => {
                 physiotherapy treatments. *
               </p>
             </div>
-            <div className="work">
+            <div className="work" data-aos="fade-up" data-aos-duration="1500">
               <h1 className="step">02.</h1>
               <small>Pick a time and place</small>
               <p>
@@ -41,7 +43,7 @@ export const About = () => {
                 time from 7am-11pm
               </p>
             </div>
-            <div className="work">
+            <div className="work" data-aos="fade-up" data-aos-duration="1500">
               <h1 className="step">03.</h1>
               <small>Relax</small>
               <p>
@@ -53,12 +55,23 @@ export const About = () => {
           <CustomLink to="/Book-Now" className="bookASession">
             Book Now
           </CustomLink>
-          <small className="available">AVAILABLE IN LAGOS ONLY</small>
+          <small
+            className="available"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            AVAILABLE IN LAGOS ONLY
+          </small>
         </div>
         {/* Over the years section */}
         <div className="overTheYears">
-          <img src="uhmm.webp" alt="" />
-          <p>
+          <img
+            src="uhmm.webp"
+            alt=""
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+          />
+          <p data-aos="zoom-in" data-aos-duration="3000">
             Over the years we have heard from many people how difficult it is to
             find good therapists who they can feel confident will be able to
             help them resolve their pain. we have high standards for our staffs
@@ -71,7 +84,7 @@ export const About = () => {
             better
           </p>
         </div>
-        <p className="endNote">
+        <p className="endNote" data-aos="zoom-in" data-aos-duration="1000">
           We are a health focused Massage clinic and because of this we offer
           products and services that you won't find at your typical massage spa.
           The services we privide were chosen specifically from our years of

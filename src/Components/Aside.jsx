@@ -36,7 +36,9 @@ const Aside = () => {
         >
           <div className="innerAside">
             <div className="cancelBtn" onClick={closeAsideBody}>
-              <h1 style={{ color: "white" }}>X</h1>
+              <h1 style={{ color: "white" }}>
+                <i class="bi bi-x-lg"></i>
+              </h1>
             </div>
 
             <div className="asideContent">

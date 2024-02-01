@@ -7,10 +7,18 @@ const ServiceAndPricing = () => {
     <div className="serviceAndPricing">
       <h2>Service and pricing</h2>
 
-      <div className="innerServiceAndPrice">
+      <div
+        className="innerServiceAndPrice"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         <div className="service_">
           {serviceAndPricingDetails.map((item, idx) => (
-            <div className="serviceContent">
+            <div
+              className="serviceContent"
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+            >
               <h4 className="serviceTitle">{item.service}</h4>
               <div
                 key={idx}

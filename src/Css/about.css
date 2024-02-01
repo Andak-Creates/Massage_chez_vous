@@ -127,6 +127,10 @@
 }
 
 @media (max-width: 750px) {
+  .about .top {
+    text-align: justify;
+  }
+
   .overTheYears {
     display: flex;
     flex-direction: column;

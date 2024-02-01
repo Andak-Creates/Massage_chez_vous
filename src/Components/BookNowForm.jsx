@@ -60,10 +60,14 @@ const BookNowForm = () => {
   };
 
   return (
-    <div className="bookingForm">
+    <div className="bookingForm" data-aos="fade-up" data-aos-duration="2000">
       <h2>Book a Session</h2>
 
-      <div className="backgroundHolder">
+      <div
+        className="backgroundHolder"
+        data-aos="zoom-in"
+        data-aos-duration="3000"
+      >
         <div className="imageBack"></div>
         <div className="plainBack"></div>
         <form action="" className="form">
