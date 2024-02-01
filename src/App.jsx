@@ -21,7 +21,7 @@ const App = () => {
     Aos.init({
       duration: 1000, // Animation duration
       easing: "ease-in-out", // Easing function
-      once: true, // Only run once on scroll
+      once: false, // Only run once on scroll
     });
 
     // Disable body overflow when AOS animations are active
