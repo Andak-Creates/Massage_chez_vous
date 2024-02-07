@@ -88,7 +88,7 @@ const BootNow = () => {
         <h2>Contact Us</h2>
         <p>
           For assistance, please tap to call:{" "}
-          <a href="tel:08119540296">(234) 8119-540-296</a>
+          <a href="tel:08101432389">(234) 8119-540-296</a>
         </p>
         <p>Email: @massagechezvous.com</p>
       </div>

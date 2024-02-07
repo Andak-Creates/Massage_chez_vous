@@ -74,7 +74,7 @@ const Footer = () => {
         <div className="footContact">
           <small>CONTACT</small>
           <p>
-            Tel: <a href="tel:08119540296">08119540296</a>
+            Tel: <a href="tel:08101432389">08119540296</a>
           </p>
           <p>
             Location: <a href="">Lagos, Lekki Sangotendo</a>
