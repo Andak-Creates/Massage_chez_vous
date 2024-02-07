@@ -36,6 +36,7 @@ const Aside = () => {
           }}
         >
           <div className="innerAside">
+            <img src="Aesthetic.webp" alt="" />
             <div className="cancelBtn" onClick={closeAsideBody}>
               <h1 style={{ color: "white" }}>
                 <i className="bi bi-x-lg"></i>
