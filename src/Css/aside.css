@@ -25,6 +25,9 @@
   color: black;
 }
 
+.asideContent {
+  background-image: url(Aesthetic.webp);
+}
 /* Media */
 @media (max-width: 615px) {
   .innerAside {
@@ -38,7 +41,6 @@
   .asideContent {
     height: 100%;
     width: 85%;
-    background-image: url(Aesthetic.webp);
     display: flex;
     justify-content: center;
     align-items: center;
