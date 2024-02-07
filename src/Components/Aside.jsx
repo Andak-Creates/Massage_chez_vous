@@ -15,6 +15,7 @@ const Aside = () => {
       behavior: "smooth",
     });
   };
+
   return (
     <>
       {isAsideOpen ? (
@@ -37,16 +38,24 @@ const Aside = () => {
           <div className="innerAside">
             <div className="cancelBtn" onClick={closeAsideBody}>
               <h1 style={{ color: "white" }}>
-                <i class="bi bi-x-lg"></i>
+                <i className="bi bi-x-lg"></i>
               </h1>
             </div>
 
             <div className="asideContent">
-              <div className="asideLink" onClick={handleClick}>
-                <Link to="/">Home</Link>
-                <Link to="/Service-&-Pricing">Service & Pricing</Link>
-                <Link to="/About-Us">About us</Link>
-                <Link to="/Book-Now">Book Now</Link>
+              <div className="asideLink">
+                <Link to="/" onClick={handleClick}>
+                  Home
+                </Link>
+                <Link to="/Service-&-Pricing" onClick={handleClick}>
+                  Service & Pricing
+                </Link>
+                <Link to="/About-Us" onClick={handleClick}>
+                  About us
+                </Link>
+                <Link to="/Book-Now" onClick={handleClick}>
+                  Book Now
+                </Link>
               </div>
             </div>
           </div>

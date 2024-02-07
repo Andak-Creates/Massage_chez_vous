@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useMyContext } from "./Context";
 
 const CustomLink = ({ to, children, className }) => {
-  const [isClicked, setIsClicked] = useState(false);
+  const { isClicked, setIsClicked } = useMyContext();
 
   const handleLinkClick = () => {
     // Toggle the state for the clicked link

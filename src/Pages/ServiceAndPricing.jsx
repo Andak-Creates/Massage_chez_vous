@@ -18,10 +18,10 @@ const ServiceAndPricing = () => {
               className="serviceContent"
               data-aos="zoom-in"
               data-aos-duration="2000"
+              key={idx}
             >
               <h4 className="serviceTitle">{item.service}</h4>
               <div
-                key={idx}
                 className="innerContent"
                 title="This should take you to a dynamic page when it's functional"
               >

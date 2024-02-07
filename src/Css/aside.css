@@ -20,6 +20,11 @@
   gap: 20px;
 }
 
+.asideLink a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Media */
 @media (max-width: 615px) {
   .innerAside {

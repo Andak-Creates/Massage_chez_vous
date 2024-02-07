@@ -116,7 +116,7 @@ label {
   .form {
     position: absolute;
     width: 90%;
-    height: 80%;
+    height: auto;
     margin: 0 auto;
     left: 50%;
     top: 50%;
