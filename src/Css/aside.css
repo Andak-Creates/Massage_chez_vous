@@ -1,6 +1,7 @@
 .aside {
   transition: all 300ms ease;
   position: absolute;
+  background-image: url("Aesthetic.webp");
 }
 
 .cancelBtn {
@@ -25,9 +26,6 @@
   color: black;
 }
 
-.asideContent {
-  background-image: url(Aesthetic.webp);
-}
 /* Media */
 @media (max-width: 615px) {
   .innerAside {
