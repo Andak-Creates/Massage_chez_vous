@@ -105,12 +105,12 @@ label {
 
   .backgroundHolder .imageBack {
     width: 100%;
-    filter: blur(2px);
+    filter: blur(1px);
   }
 
   .backgroundHolder {
     position: relative;
-    height: 500px;
+    height: 650px;
   }
 
   .form {
