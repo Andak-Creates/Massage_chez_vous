@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import { useMyContext } from "./Context";
 
@@ -16,6 +16,7 @@ const NavigationBar = () => {
     about: false,
     bookNow: false,
   });
+
   const handleLinkClick = (linkName) => {
     // Reset the state for all links to black
     const updatedState = Object.fromEntries(

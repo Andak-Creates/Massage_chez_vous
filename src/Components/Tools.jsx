@@ -47,6 +47,7 @@ export const ourServices = [
 
 export const serviceAndPricingDetails = [
   {
+    id: 1,
     service: "Swedish Massage",
     img: "photo-15.webp",
     details:
@@ -56,6 +57,7 @@ export const serviceAndPricingDetails = [
     largestTime: 60,
   },
   {
+    id: 2,
     service: "Deep Tissue Massage",
     img: "deep1.webp",
     details:
@@ -65,6 +67,8 @@ export const serviceAndPricingDetails = [
     largestTime: 60,
   },
   {
+    id: 3,
+
     service: "Hot Stone Massage",
     img: "stoneMassage.webp",
     details:
@@ -74,6 +78,8 @@ export const serviceAndPricingDetails = [
     largestTime: 60,
   },
   {
+    id: 4,
+
     service: "Sport Stretch",
     img: "istockphoto-16.jpg",
     details:

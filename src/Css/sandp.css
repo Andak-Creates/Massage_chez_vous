@@ -53,6 +53,39 @@
   display: none;
 }
 
+.serviceDisplay {
+  padding: 0 30px;
+}
+
+.goBackBtn {
+  border: none;
+  background-color: whitesmoke;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+}
+
+/*  */
+
+.contentDisplayed {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentDisplayed img {
+  height: 170px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.contentDisplayed p {
+  width: 80%;
+}
+
 @media (max-width: 835px) {
   .serviceAndPricing {
     margin: 90px auto;
@@ -95,5 +128,15 @@
 
   .desc {
     display: none;
+  }
+
+  .contentDisplayed img {
+    height: 300px;
+    width: 100%;
+  }
+
+  .contentDisplayed p {
+    width: 100%;
+    font-size: 20px;
   }
 }

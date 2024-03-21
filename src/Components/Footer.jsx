@@ -12,44 +12,45 @@ const Footer = () => {
     setMyName,
   } = useMyContext();
 
-  useEffect(() => {
-    //retrieve testimonial from local storage
-    const storedTestimonial =
-      JSON.parse(localStorage.getItem("testimonials")) || [];
-    setTestimonial(storedTestimonial);
-  }, []);
+  // useEffect(() => {
+  //   //retrieve testimonial from local storage
+  //   const storedTestimonial =
+  //     JSON.parse(localStorage.getItem("testimonials")) || [];
+  //   setTestimonial(storedTestimonial);
+  // }, []);
 
-  const handleThoughts = (event) => {
-    setThoughts(event.target.value);
-  };
+  // const handleThoughts = (event) => {
+  //   setThoughts(event.target.value);
+  // };
 
-  const HandleName = (event) => {
-    setMyName(event.target.value);
-  };
+  // const HandleName = (event) => {
+  //   setMyName(event.target.value);
+  // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // warn("this functionality is currently unavailable");
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
 
-    //creating new testimonials
-    const newTestimonial = {
-      id: Date.now(), //Adds unique ID
-      name: myName,
-      thoughts: myThoughts,
-    };
+  //   // //creating new testimonials
+  //   // const newTestimonial = {
+  //   //   id: Date.now(), //Adds unique ID
+  //   //   name: myName,
+  //   //   thoughts: myThoughts,
+  //   // };
 
-    //updates testimonial state
-    setTestimonial([...testimonial, newTestimonial]);
+  //   // //updates testimonial state
+  //   // setTestimonial([...testimonial, newTestimonial]);
 
-    // Storing testimonial data in local storage
-    localStorage.setItem(
-      "testimonials",
-      JSON.stringify([...testimonial, newTestimonial])
-    );
+  //   // // Storing testimonial data in local storage
+  //   // localStorage.setItem(
+  //   //   "testimonials",
+  //   //   JSON.stringify([...testimonial, newTestimonial])
+  //   // );
 
-    // Reset form
-    setMyName("");
-    setThoughts("");
-  };
+  //   // // Reset form
+  //   // setMyName("");
+  //   // setThoughts("");
+  // };
 
   return (
     <div className="footer">
@@ -84,18 +85,18 @@ const Footer = () => {
           </p>
         </div>
 
-        <form className="footForm" onSubmit={handleSubmit}>
+        <form className="footForm">
           <small className="wmuHeader">POST A FEEDBACK</small>
           <label>
             name:
-            <input type="text" value={myName} onChange={HandleName} />
+            <input type="text" value={myName} />
           </label>
           <label>
             Comment:
-            <input type="text" value={myThoughts} onChange={handleThoughts} />
+            <input type="text" value={myThoughts} />
           </label>
 
-          <button type="submit">Submit</button>
+          <button>Submit</button>
         </form>
       </div>
       <div className="rights">All Rights Reserved. Designed By Vindi Tech</div>

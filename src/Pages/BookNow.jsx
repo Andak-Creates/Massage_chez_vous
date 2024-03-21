@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 
 const BootNow = () => {
   const [formData, setFormData] = useState({
+    name: "",
+    email: "",
     massageType: "",
     date: "",
     time: "",
     preferences: "",
   });
 
-  // useEffect(() => {
+  // useEffe  ct(() => {
   //   const storedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
   // }, []);
 
@@ -21,6 +23,9 @@ const BootNow = () => {
     e.preventDefault();
     // Add logic to handle form submission (e.g., API request, booking confirmation).
     console.log("Form submitted:", formData);
+    alert(
+      "Booking Request successfully sent, You'll recieve an email shortly confirming your booking request"
+    );
   };
 
   return (
@@ -32,6 +37,28 @@ const BootNow = () => {
 
       {/* Booking Form */}
       <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
         <label>
           Massage Type:
           <select
