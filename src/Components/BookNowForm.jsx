@@ -44,7 +44,9 @@ const BookNowForm = () => {
         data-aos="zoom-in"
         data-aos-duration="3000"
       >
-        <div className="imageBack"></div>
+        <div className="imageBack">
+          <img src="massageImage1.jpeg" alt="" />
+        </div>
         <div className="plainBack"></div>
         <form onSubmit={handleSubmit} className="form">
           <div className="innerForm">
