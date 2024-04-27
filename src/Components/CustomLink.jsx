@@ -12,7 +12,7 @@ const CustomLink = ({ to, children, className }) => {
     // Scroll to the top of the page if needed
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "instant",
     });
   };
 

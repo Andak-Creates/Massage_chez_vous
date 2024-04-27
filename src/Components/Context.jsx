@@ -8,6 +8,7 @@ export const ContextProvider = ({ children }) => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [massage, setMassage] = useState();
+  const [linkId, setLinkId] = useState(1);
 
   // Testimonial usestates
   const [myThoughts, setThoughts] = useState();
@@ -17,6 +18,8 @@ export const ContextProvider = ({ children }) => {
   return (
     <MyContext.Provider
       value={{
+        linkId,
+        setLinkId,
         isAsideOpen,
         setAside,
         massage,

@@ -1,80 +1,61 @@
 import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import { useMyContext } from "./Context";
+import { navLinks } from "./Tools";
 
 const NavigationBar = () => {
   const { isAsideOpen, setAside } = useMyContext();
+  const { linkId, setLinkId } = useMyContext();
 
   const openAside = () => {
     isAsideOpen ? setAside(false) : setAside(true);
-    console.log(isAsideOpen);
   };
+  const handleLinkClick = (navId) => {
+    const clickedLink = navLinks.map((link) => {
+      if (link.id === navId) {
+        setLinkId(navId);
+        console.log(navId);
+        // setting local storage for link id
+        sessionStorage.setItem("linkClicked", JSON.stringify(navId));
+      }
 
-  const [isLinkClicked, setIsLinkClicked] = useState({
-    home: false,
-    service: false,
-    about: false,
-    bookNow: false,
-  });
-
-  const handleLinkClick = (linkName) => {
-    // Reset the state for all links to black
-    const updatedState = Object.fromEntries(
-      Object.entries(isLinkClicked).map(([key]) => [key, false])
-    );
-
-    // Change the color by toggling the state
-    setIsLinkClicked((prevState) => ({
-      ...updatedState,
-      [linkName]: !prevState[linkName],
-    }));
-    // Scroll to the top of the page
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+      // Scroll to the top of the page
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
     });
   };
 
+  useEffect(() => {
+    // Retrieving link id on every reload
+    const lastClickedId = JSON.parse(sessionStorage.getItem("linkClicked"));
+
+    if (lastClickedId !== null) {
+      setLinkId(lastClickedId);
+    }
+  }, []);
   return (
     <>
       <div className="navigator">
         <h2>Massage Chez Vous</h2>
 
         <div className="NavLinks">
-          <Link
-            to="/"
-            onClick={() => handleLinkClick("home")}
-            style={{ color: isLinkClicked.home ? "red" : "black" }}
-            className="navbar-link"
-          >
-            Home
-          </Link>
-          <Link
-            to="/Service-&-Pricing"
-            onClick={() => handleLinkClick("service")}
-            style={{ color: isLinkClicked.service ? "red" : "black" }}
-            className="navbar-link"
-          >
-            Service & Pricing
-          </Link>
-          <Link
-            to="/About-Us"
-            onClick={() => handleLinkClick("about")}
-            style={{ color: isLinkClicked.about ? "red" : "black" }}
-            className="navbar-link"
-          >
-            About us
-          </Link>
+          {navLinks &&
+            navLinks
+              .map((myLink) => (
+                <Link
+                  onClick={() => handleLinkClick(myLink.id)}
+                  key={myLink.id}
+                  style={myLink.id == linkId ? { color: "red" } : {}}
+                  to={myLink.linkTo}
+                  id={myLink.id}
+                >
+                  {myLink.linkName}
+                </Link>
+              ))
+              .slice(0, 3)}
         </div>
-        <Link
-          to="/Book-Now"
-          onClick={() => handleLinkClick("book")}
-          style={{ color: isLinkClicked.book ? "red" : "black" }}
-          className="navbar-link"
-        >
-          Book Now
-        </Link>
-
         <div className="burger" onClick={openAside}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -101,6 +82,18 @@ const NavigationBar = () => {
             </g>
           </svg>
         </div>
+        {navLinks
+          .map((myLink) => (
+            <Link
+              onClick={() => handleLinkClick(myLink.id)}
+              key={myLink.id}
+              id={myLink.id}
+              to={myLink.linkTo}
+            >
+              {myLink.linkName}
+            </Link>
+          ))
+          .slice(3, 4)}
       </div>
     </>
   );

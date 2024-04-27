@@ -99,7 +99,7 @@ const Footer = () => {
           <button>Submit</button>
         </form>
       </div>
-      <div className="rights">All Rights Reserved. Designed By Vindi Tech</div>
+      <div className="rights">Designed By VindiCodes</div>
     </div>
   );
 };

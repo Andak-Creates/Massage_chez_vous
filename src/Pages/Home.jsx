@@ -1,10 +1,27 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
-import { ourServices } from "../Components/Tools";
+import { navLinks, ourServices } from "../Components/Tools";
 import BookNowForm from "../Components/BookNowForm";
 import Wmu from "../Components/Wmu";
-import CustomLink from "../Components/CustomLink";
+import { useMyContext } from "../Components/Context";
+
 const Home = () => {
+  const { linkId, setLinkId } = useMyContext();
+  const handleLinkClick = (navId) => {
+    const clickedLink = navLinks.map((link) => {
+      if (link.id === navId) {
+        setLinkId(navId);
+        // setting local storage for link id
+        sessionStorage.setItem("linkClicked", JSON.stringify(navId));
+      }
+
+      // Scroll to the top of the page
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
+    });
+  };
   return (
     <div className="home">
       <div className="innerHome">
@@ -14,9 +31,18 @@ const Home = () => {
           <h2>The Best Massage Service At Your Doorstep.</h2>
           <p>TAX AND TIPS INCLUDED</p>
           <div className="findOutMore">
-            <CustomLink to="/About-Us" className="viewMoreBtn">
-              View More
-            </CustomLink>
+            {navLinks
+              .map((myLink) => (
+                <Link
+                  key={myLink.id}
+                  onClick={() => handleLinkClick(myLink.id)}
+                  to={myLink.linkTo}
+                  className="viewMoreBtn"
+                >
+                  View More
+                </Link>
+              ))
+              .slice(2, 3)}
           </div>
         </div>
       </div>
@@ -67,9 +93,18 @@ const Home = () => {
               <p>{service.service}</p>
               <small> {service.details} </small>
               <br></br>
-              <CustomLink to="/Service-&-Pricing" className="viewMoreBtn">
-                See More
-              </CustomLink>
+              {navLinks
+                .map((myLink) => (
+                  <Link
+                    key={myLink.id}
+                    onClick={() => handleLinkClick(myLink.id)}
+                    to={myLink.linkTo}
+                    className="viewMoreBtn"
+                  >
+                    See More
+                  </Link>
+                ))
+                .slice(1, 2)}
             </div>
           ))}
         </div>

@@ -355,10 +355,12 @@ body * {
     z-index: 50;
   }
 
-  .banner p {
+  .banner .p {
     width: 100%;
     font-size: 14px;
     text-align: center;
+    text-decoration: none;
+    color: black;
   }
 
   .innerHome {

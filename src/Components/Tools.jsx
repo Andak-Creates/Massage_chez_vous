@@ -1,3 +1,26 @@
+export const navLinks = [
+  {
+    id: 1,
+    linkTo: "/",
+    linkName: "Home",
+  },
+  {
+    id: 2,
+    linkTo: "/Service-&-Pricing",
+    linkName: "Service & Pricing",
+  },
+  {
+    id: 3,
+    linkTo: "/About-Us",
+    linkName: "About Us",
+  },
+  {
+    id: 4,
+    linkTo: "/Book-Now",
+    linkName: "Book Now",
+  },
+];
+
 export const whatMakesUs = [
   {
     img: "verified.png",

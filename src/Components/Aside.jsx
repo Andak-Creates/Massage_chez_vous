@@ -1,49 +1,46 @@
-import React, { useState } from "react";
-import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import { useMyContext } from "./Context";
 import "../Css/aside.css";
+import { navLinks } from "./Tools";
 const Aside = () => {
-  const { isAsideOpen, setAside } = useMyContext();
-  const [isLinkClicked, setIsLinkClicked] = useState({
-    home: false,
-    service: false,
-    about: false,
-    bookNow: false,
-  });
+  const { isAsideOpen, setAside, linkId, setLinkId } = useMyContext();
+
   const closeAsideBody = () => {
     setAside(false);
   };
 
-  const handleLinkClick = (linkName) => {
-    // Reset the state for all links to black
-    const updatedState = Object.fromEntries(
-      Object.entries(isLinkClicked).map(([key]) => [key, false])
-    );
-
-    // Change the color by toggling the state
-    setIsLinkClicked((prevState) => ({
-      ...updatedState,
-      [linkName]: !prevState[linkName],
-    }));
-    // Scroll to the top of the page
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+  const handleLinkClick = (navId) => {
+    const clickedLink = navLinks.map((mylink) => {
+      if (mylink.id === navId) {
+        setLinkId(navId);
+        sessionStorage.setItem("linkClicked", JSON.stringify(navId));
+      }
     });
 
     // Scroll to the top of the page
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "instant",
     });
+
+    setAside(false);
   };
+
+  useEffect(() => {
+    // Retrieving link id on every reload
+    const lastClickedId = JSON.parse(sessionStorage.getItem("linkClicked"));
+
+    if (lastClickedId !== null) {
+      setLinkId(lastClickedId);
+    }
+  }, []);
 
   return (
     <>
       {isAsideOpen ? (
         <div
           className="aside"
-          onClick={closeAsideBody}
           style={{
             width: "100%",
             transition: "all 300ms ease",
@@ -67,34 +64,18 @@ const Aside = () => {
 
             <div className="asideContent">
               <div className="asideLink">
-                <Link
-                  to="/"
-                  onClick={() => handleLinkClick("home")}
-                  style={{ color: isLinkClicked.home ? "red" : "black" }}
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/Service-&-Pricing"
-                  onClick={() => handleLinkClick("service")}
-                  style={{ color: isLinkClicked.service ? "red" : "black" }}
-                >
-                  Service & Pricing
-                </Link>
-                <Link
-                  to="/About-Us"
-                  onClick={() => handleLinkClick("about")}
-                  style={{ color: isLinkClicked.about ? "red" : "black" }}
-                >
-                  About us
-                </Link>
-                <Link
-                  to="/Book-Now"
-                  onClick={() => handleLinkClick("book")}
-                  style={{ color: isLinkClicked.book ? "red" : "black" }}
-                >
-                  Book Now
-                </Link>
+                {navLinks &&
+                  navLinks.map((myLink) => (
+                    <Link
+                      onClick={() => handleLinkClick(myLink.id)}
+                      key={myLink.id}
+                      style={myLink.id == linkId ? { color: "red" } : {}}
+                      to={myLink.linkTo}
+                      id={myLink.id}
+                    >
+                      {myLink.linkName}
+                    </Link>
+                  ))}
               </div>
             </div>
           </div>

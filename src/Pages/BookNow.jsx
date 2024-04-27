@@ -33,7 +33,11 @@ const BootNow = () => {
       <h1>Book Your Massage</h1>
 
       {/* Hero Image */}
-      <img src="" alt="Serene Massage Setting" />
+      <img
+        src=""
+        alt="Serene Massage Setting"
+        // style={{ height: "200px", width: "90%", objectFit: "cover" }}
+      />
 
       {/* Booking Form */}
       <form onSubmit={handleSubmit}>
